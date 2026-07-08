@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+:root {
+  /* Light Theme: White background, black text, gold/tan accent */
+  --background: #ffffff;
+  --foreground: #09090b;
+  
+  --bg-primary: #ffffff;
+  --bg-secondary: #f4f4f5;
+  --bg-card: rgba(255, 255, 255, 0.85);
+  --text-primary: #09090b;
+  --text-secondary: #52525b;
+  --accent: #b58925; /* Muted Gold for contrast on light backgrounds */
+  --accent-light: rgba(181, 137, 37, 0.06);
+  --border: rgba(9, 9, 11, 0.06);
+  --timeline-dot-bg: #ffffff;
+  --timeline-line: #e4e4e7;
+}
+
+.dark {
+  /* Dark Theme: Soft charcoal (not pitch black), white text, gold/tan accent */
+  --background: #0d0d0f;
+  --foreground: #f8fafc;
+
+  --bg-primary: #0d0d0f; /* Premium warm charcoal background */
+  --bg-secondary: #141417; /* Muted secondary charcoal */
+  --bg-card: rgba(26, 26, 30, 0.65);
+  --text-primary: #f8fafc;
+  --text-secondary: #a1a1aa;
+  --accent: #d4af37; /* Bright Metallic Gold */
+  --accent-light: rgba(212, 175, 55, 0.1);
+  --border: rgba(255, 255, 255, 0.08);
+  --timeline-dot-bg: #0d0d0f;
+  --timeline-line: #27272a;
+}
+
+@theme {
+  --font-sans: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
+  
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-bg-card: var(--bg-card);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-accent: var(--accent);
+  --color-accent-light: var(--accent-light);
+  --color-border-custom: var(--border);
+  --color-timeline-dot-bg: var(--timeline-dot-bg);
+  --color-timeline-line: var(--timeline-line);
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bg-secondary);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
